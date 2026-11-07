@@ -1,0 +1,7 @@
+{
+  "keep": [
+    {"start": 0.4, "end": 2.0, "note": "synthetic section A"},
+    {"start": 4.0, "end": 6.4, "note": "synthetic section B"}
+  ],
+  "audio_edge_fade_ms": 0
+}

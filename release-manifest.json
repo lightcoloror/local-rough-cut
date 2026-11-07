@@ -1,0 +1,151 @@
+{
+  "package": "local-rough-cut",
+  "version": "0.1.0rc1",
+  "freeze_id": "sha256:f6927ddb841eea0dd16a64d70c53515de12bf7049b148dcae65ab902fe0ab210",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "3a09bc846df07ba430dca13f440ea89cdbb88c0c80d3c284b9298876b03f91e0",
+      "bytes": 103,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "a63117f40585c222fc6608b89a45524414c4b899fbcb209bc77cb94fb227d498",
+      "bytes": 1063,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "6a3c0321661d755c0c90855cae3c1204d1bccc10661a148c27fb19b6358b238a",
+      "bytes": 10932,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "7bf275e29506801f4d5bc5dd213aa4792616b058045b94e799cac5b87b11c3ab",
+      "bytes": 258,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "sha256": "4d2876c84a03e4116173f741e25bd774330cb6643aabbdde3cd6e24d311c5b1a",
+      "bytes": 3550,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "README.md",
+      "sha256": "cd8de5faa47543925b44db0775c69fb03418382054673d3cac901bafa9d1d4f2",
+      "bytes": 5885,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "1d9034910a525ac2f6c20db6f232b605cc44b072a9a6fc92d5a0740ee418379d",
+      "bytes": 1014,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "examples/selections.json",
+      "sha256": "afdaecc3aef99b740cacd52ab24a44dde2399dc8be68ed41221d9d2f0bec0ac1",
+      "bytes": 172,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "local_rough_cut/__init__.py",
+      "sha256": "6777cd8402ef908f48f8336130a3c29405495947e46947e4faba93c204dc2dd1",
+      "bytes": 171,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "local_rough_cut/cli.py",
+      "sha256": "4a7615922b2cc766d140cb2febe5fbd4e02e9b644530828870199231460eda06",
+      "bytes": 17506,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "local_rough_cut/contract_io.py",
+      "sha256": "1d816200ad2bc34aad780682d1594250a3d6d707acbb2042c8fab1d6965d3f80",
+      "bytes": 4398,
+      "license": "Apache-2.0",
+      "origin": "extracted/adapted"
+    },
+    {
+      "path": "local_rough_cut/editing_presets.py",
+      "sha256": "51efe04c2471b27a40a5ec833ab57644e8ae21b04a4785681a6084ff16574305",
+      "bytes": 1306,
+      "license": "Apache-2.0",
+      "origin": "extracted/adapted"
+    },
+    {
+      "path": "local_rough_cut/errors.py",
+      "sha256": "888d71109421a361c6a2ff13c0f34fa375c735cf7ac468157b8b77416cb6133e",
+      "bytes": 261,
+      "license": "Apache-2.0",
+      "origin": "extracted/adapted"
+    },
+    {
+      "path": "local_rough_cut/execution_receipts.py",
+      "sha256": "bfc8bb1375a74b7b80b74accb7554e5be1d9ff86192a81f29cd59da552435373",
+      "bytes": 17471,
+      "license": "Apache-2.0",
+      "origin": "extracted/adapted"
+    },
+    {
+      "path": "local_rough_cut/render_kernel.py",
+      "sha256": "342c7bc7136f2f0e7b63c4bd4d2a12a4c7574fe33b5754c54df4adc4ef7fe0cb",
+      "bytes": 2501,
+      "license": "Apache-2.0",
+      "origin": "extracted/adapted"
+    },
+    {
+      "path": "local_rough_cut/review_resource_guard.py",
+      "sha256": "602ca0a6893c1c9cd60ed32ff1e13f1a7be411e51c3f1da3546f94f98d76f324",
+      "bytes": 15674,
+      "license": "Apache-2.0",
+      "origin": "extracted/adapted"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "26c0e102978e90a1618e6e0e3e75b3523a4ae8a70db4304a02dafe3831871d60",
+      "bytes": 15,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "rough_cut.py",
+      "sha256": "c66499914f2490d5e5ea940ca0db348ee0c82d278fbd8392f92ea6f5d1d4e8df",
+      "bytes": 357,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    },
+    {
+      "path": "tests/test_contract.py",
+      "sha256": "31994348a518471bd00a6f9c97c64789c02510f3bf6b29c8b10b3beab3971ee4",
+      "bytes": 5207,
+      "license": "Apache-2.0",
+      "origin": "project-owned/package documentation"
+    }
+  ],
+  "manifest_self_hash_excluded": true,
+  "license": "Apache-2.0",
+  "source_candidate_freeze_id": "sha256:aeaee844d9052095c763a4e483256d2589e729381f6f77991981b02152b02d4f",
+  "destination": {
+    "owner": "lightcoloror",
+    "repository": "local-rough-cut",
+    "branch": "main",
+    "visibility": "public"
+  },
+  "repository": "https://github.com/lightcoloror/local-rough-cut",
+  "release_channel": "release_candidate"
+}

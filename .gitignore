@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+demo-output/
+work/
+dist/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.log
+*-receipt.json

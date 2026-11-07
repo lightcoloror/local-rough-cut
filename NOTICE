@@ -1,0 +1,6 @@
+Local Rough Cut
+Copyright 2026 lightcoloror
+
+Includes code extracted and adapted from mvp-video-pipeline (Apache-2.0).
+See PROVENANCE.md for extraction boundaries and modifications.
+Third-party executables, Python packages, media and models are not bundled.
