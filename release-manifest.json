@@ -1,151 +1,219 @@
 {
   "package": "local-rough-cut",
-  "version": "0.1.0rc1",
-  "freeze_id": "sha256:f6927ddb841eea0dd16a64d70c53515de12bf7049b148dcae65ab902fe0ab210",
+  "version": "0.2.0rc1",
+  "scope": "P1 boundary review and source SRT retiming",
+  "baseline_commit": "ff9173d7e4813afd7d1b472979c7089f6df5c734",
+  "freeze_id": "sha256:d18d7b59becc63df33f167a2b6d78e82a63073d8b4dc1a197af23569196750ea",
   "files": [
     {
       "path": ".gitignore",
       "sha256": "3a09bc846df07ba430dca13f440ea89cdbb88c0c80d3c284b9298876b03f91e0",
       "bytes": 103,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "CONTRIBUTING.md",
       "sha256": "a63117f40585c222fc6608b89a45524414c4b899fbcb209bc77cb94fb227d498",
       "bytes": 1063,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "LICENSE",
       "sha256": "6a3c0321661d755c0c90855cae3c1204d1bccc10661a148c27fb19b6358b238a",
       "bytes": 10932,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "NOTICE",
       "sha256": "7bf275e29506801f4d5bc5dd213aa4792616b058045b94e799cac5b87b11c3ab",
       "bytes": 258,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
+    },
+    {
+      "path": "P1-PROVENANCE.md",
+      "sha256": "3a3997ccc30479eac3a15f5eca5c729b448aea9fb865186746656afca36ecfe5",
+      "bytes": 2153,
+      "change": "added",
+      "license": "Apache-2.0",
+      "origin": "P1 project-owned adapter/synthetic material"
     },
     {
       "path": "PROVENANCE.md",
       "sha256": "4d2876c84a03e4116173f741e25bd774330cb6643aabbdde3cd6e24d311c5b1a",
       "bytes": 3550,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "README.md",
-      "sha256": "cd8de5faa47543925b44db0775c69fb03418382054673d3cac901bafa9d1d4f2",
-      "bytes": 5885,
+      "sha256": "d08abc0b7f7fd07e2f6a2c5e64051c21b02eae3f793590e11523a0ab369bead5",
+      "bytes": 8133,
+      "change": "modified",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
       "sha256": "1d9034910a525ac2f6c20db6f232b605cc44b072a9a6fc92d5a0740ee418379d",
       "bytes": 1014,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "examples/selections.json",
       "sha256": "afdaecc3aef99b740cacd52ab24a44dde2399dc8be68ed41221d9d2f0bec0ac1",
       "bytes": 172,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
+    },
+    {
+      "path": "examples/synthetic-edge-cases.srt",
+      "sha256": "9a34d7572715a1f0c5cfe87bc6e260d029988ab147ad1e7ce09778027d81e7d3",
+      "bytes": 316,
+      "change": "added",
+      "license": "Apache-2.0",
+      "origin": "P1 project-owned adapter/synthetic material"
+    },
+    {
+      "path": "examples/synthetic-subtitles.srt",
+      "sha256": "0d21c0a2dbd896ab7cad0c1b16f9d2ed3730ef1fe62c14e3f9323de8c989edc2",
+      "bytes": 301,
+      "change": "added",
+      "license": "Apache-2.0",
+      "origin": "P1 project-owned adapter/synthetic material"
     },
     {
       "path": "local_rough_cut/__init__.py",
-      "sha256": "6777cd8402ef908f48f8336130a3c29405495947e46947e4faba93c204dc2dd1",
+      "sha256": "093abbd1973be803e4c9b35140c3cfadd60c2a26cc6689301d1d2f494b597242",
       "bytes": 171,
+      "change": "modified",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "local_rough_cut/cli.py",
-      "sha256": "4a7615922b2cc766d140cb2febe5fbd4e02e9b644530828870199231460eda06",
-      "bytes": 17506,
+      "sha256": "20e6a177e71673b72df4149800645dd68d0d2b9a57bd9ff45456ef7874aec79a",
+      "bytes": 22162,
+      "change": "modified",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "local_rough_cut/contract_io.py",
       "sha256": "1d816200ad2bc34aad780682d1594250a3d6d707acbb2042c8fab1d6965d3f80",
       "bytes": 4398,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "extracted/adapted"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "local_rough_cut/editing_presets.py",
       "sha256": "51efe04c2471b27a40a5ec833ab57644e8ae21b04a4785681a6084ff16574305",
       "bytes": 1306,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "extracted/adapted"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "local_rough_cut/errors.py",
       "sha256": "888d71109421a361c6a2ff13c0f34fa375c735cf7ac468157b8b77416cb6133e",
       "bytes": 261,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "extracted/adapted"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "local_rough_cut/execution_receipts.py",
       "sha256": "bfc8bb1375a74b7b80b74accb7554e5be1d9ff86192a81f29cd59da552435373",
       "bytes": 17471,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "extracted/adapted"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "local_rough_cut/render_kernel.py",
       "sha256": "342c7bc7136f2f0e7b63c4bd4d2a12a4c7574fe33b5754c54df4adc4ef7fe0cb",
       "bytes": 2501,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "extracted/adapted"
+      "origin": "public baseline or bounded P1 adaptation"
+    },
+    {
+      "path": "local_rough_cut/review.py",
+      "sha256": "862efbee099959d53978fa6a0eb66444d0ebd1e3db96b954b2fd02aaa8384cf6",
+      "bytes": 7287,
+      "change": "added",
+      "license": "Apache-2.0",
+      "origin": "P1 project-owned adapter/synthetic material"
     },
     {
       "path": "local_rough_cut/review_resource_guard.py",
       "sha256": "602ca0a6893c1c9cd60ed32ff1e13f1a7be411e51c3f1da3546f94f98d76f324",
       "bytes": 15674,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "extracted/adapted"
+      "origin": "public baseline or bounded P1 adaptation"
+    },
+    {
+      "path": "local_rough_cut/subtitles.py",
+      "sha256": "426a622dde959e1b1acdb707e8e748452cbc4bbbd86bb2fde612c78243d43b47",
+      "bytes": 5618,
+      "change": "added",
+      "license": "Apache-2.0",
+      "origin": "P1 project-owned adapter/synthetic material"
     },
     {
       "path": "requirements.txt",
       "sha256": "26c0e102978e90a1618e6e0e3e75b3523a4ae8a70db4304a02dafe3831871d60",
       "bytes": 15,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "rough_cut.py",
       "sha256": "c66499914f2490d5e5ea940ca0db348ee0c82d278fbd8392f92ea6f5d1d4e8df",
       "bytes": 357,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
     },
     {
       "path": "tests/test_contract.py",
       "sha256": "31994348a518471bd00a6f9c97c64789c02510f3bf6b29c8b10b3beab3971ee4",
       "bytes": 5207,
+      "change": "unchanged",
       "license": "Apache-2.0",
-      "origin": "project-owned/package documentation"
+      "origin": "public baseline or bounded P1 adaptation"
+    },
+    {
+      "path": "tests/test_p1.py",
+      "sha256": "19378c06e7f77b794862fc01a8bd7d7dfa77d1c19f24e81936cefe982a84137f",
+      "bytes": 9827,
+      "change": "added",
+      "license": "Apache-2.0",
+      "origin": "P1 project-owned adapter/synthetic material"
     }
   ],
   "manifest_self_hash_excluded": true,
   "license": "Apache-2.0",
-  "source_candidate_freeze_id": "sha256:aeaee844d9052095c763a4e483256d2589e729381f6f77991981b02152b02d4f",
-  "destination": {
+  "published": false,
+  "approval_status": "awaiting_owner_scope_review",
+  "proposed_destination": {
     "owner": "lightcoloror",
     "repository": "local-rough-cut",
-    "branch": "main",
+    "branch": "codex/p1-review-srt-20261107",
     "visibility": "public"
-  },
-  "repository": "https://github.com/lightcoloror/local-rough-cut",
-  "release_channel": "release_candidate"
+  }
 }

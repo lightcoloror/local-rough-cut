@@ -257,6 +257,70 @@ def demo(output):
     return render(plan, target / 'render', reviewed=True)
 
 
+def review(plan_path, output, radius_s=0.6, rendered=None, clips=False, reviewed=False):
+    from .review import attach_rendered, boundary_review, export_review_clips
+
+    plan = read_json_object(plan_path, 'plan')
+    validate_plan(plan)
+    report = boundary_review(plan, radius_s, reviewed)
+    profile = attach_rendered(report, rendered, plan) if rendered else None
+    target = new_directory(output)
+    lines = ['# Boundary review', '',
+             'Intervals use [start,end). Seek positions refer to retained frames.',
+             'Caller confirmation and actual human playback have separate fields.', '',
+             '| Item | Source windows in seconds | Target window | Target boundary | Status |',
+             '|---|---|---|---|---|']
+    for item in report['items']:
+        source = '; '.join(f"{row['side']} {row['range_s']} (seek {row['seek_s']})" for row in item['source_windows'])
+        lines.append(f"|{item['review_id']}|{source}|{item['target_window']}|{item['target_boundary_s']}|{item['review_status']}|")
+    atomic_write_text('\n'.join(lines) + '\n', target / 'REVIEW.md')
+    atomic_write_json(report, target / 'review.json')
+    if clips:
+        try:
+            export_review_clips(report, plan, target, profile)
+        except Exception as exc:
+            report.update(clips_status='failed', error_type=type(exc).__name__, error=str(exc))
+            atomic_write_json(report, target / 'review.json')
+            raise
+    return target / 'review.json'
+
+
+def retime_srt(plan_path, srt_path, output, reviewed=False):
+    from .subtitles import format_srt, parse_srt, retime_cues
+
+    if not reviewed:
+        raise ContractError('Review the plan first, then pass --reviewed')
+    plan = read_json_object(plan_path, 'plan')
+    validate_plan(plan)
+    source_srt = artifact_reference(srt_path, 'source SRT')
+    if source_srt['bytes'] > 10 * 1024 * 1024:
+        raise ContractError('Source SRT exceeds the 10 MiB limit')
+    cues = parse_srt(Path(source_srt['path']).read_text(encoding='utf-8-sig'))
+    mapped, mappings = retime_cues(cues, plan)
+    text = format_srt(mapped)
+    if parse_srt(text) != [dict(cue, source_index=index) for index, cue in enumerate(mapped, 1)]:
+        raise ContractError('Exported SRT failed its strict parse check')
+    validate_artifact_reference(source_srt, 'SRT after mapping')
+    validate_artifact_reference(plan['source_video'], 'source after subtitle mapping')
+    target = new_directory(output)
+    srt = target / 'candidate.srt'
+    atomic_write_text(text, srt)
+    pending = [row['source_index'] for row in mappings if row['review_status'] == 'pending']
+    report = {
+        'schema': 'local_rough_cut.srt_mapping.v1', 'plan_sha256': plan['plan_sha256'],
+        'source_srt': source_srt, 'source_video': plan['source_video'], 'input_clock': 'source',
+        'output_clock': 'target', 'interval_convention': '[start,end)', 'timeline': timeline_mapping(plan),
+        'review_confirmation': 'caller_asserted', 'human_text_review': 'pending' if pending else 'not_requested',
+        'pending_source_indexes': pending, 'transcript_coverage': 'not_checked',
+        'status': 'text_review_required' if pending else 'timing_checks_passed',
+        'source_cue_count': len(cues), 'output_cue_count': len(mapped), 'cues': mappings,
+        'output_srt': artifact_reference(srt, 'mapped SRT'),
+        'text_policy': 'Full source text is retained in each fragment. Split/truncated wording requires review.',
+    }
+    atomic_write_json(report, target / 'mapping.json')
+    return srt
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description='本地人工选段粗剪；原片只读，无模型、联网或自动语义删减。')
     sub = parser.add_subparsers(dest='command', required=True)
@@ -270,12 +334,28 @@ def main(argv=None):
     p.add_argument('--reviewed', action='store_true')
     p = sub.add_parser('demo', help='仅使用自生成合成片跑通整条链')
     p.add_argument('--output', required=True)
+    p = sub.add_parser('review', help='生成原片与成片的开头、接缝和结尾定位')
+    p.add_argument('--plan', required=True)
+    p.add_argument('--output', required=True)
+    p.add_argument('--radius', type=float, default=0.6)
+    p.add_argument('--rendered', help='该计划 render 输出的 validation.json')
+    p.add_argument('--clips', action='store_true', help='通过现有 FFmpeg 出口生成复核小窗')
+    p.add_argument('--reviewed', action='store_true', help='记录调用者确认，不代表实际播放证据')
+    p = sub.add_parser('retime-srt', help='将原片 SRT 映射到成片，输出待复核项')
+    p.add_argument('--plan', required=True)
+    p.add_argument('--srt', required=True)
+    p.add_argument('--output', required=True)
+    p.add_argument('--reviewed', action='store_true')
     args = parser.parse_args(argv)
     try:
         if args.command == 'plan':
             result = make_plan(args.source, args.selections, args.output)
         elif args.command == 'render':
             result = render(args.plan, args.output, args.reviewed)
+        elif args.command == 'review':
+            result = review(args.plan, args.output, args.radius, args.rendered, args.clips, args.reviewed)
+        elif args.command == 'retime-srt':
+            result = retime_srt(args.plan, args.srt, args.output, args.reviewed)
         else:
             result = demo(args.output)
         print(json.dumps({'status': 'completed', 'output': str(result)}, ensure_ascii=True))
